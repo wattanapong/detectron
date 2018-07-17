@@ -1,2 +1,3 @@
 model/**
 test/**
+train_e2e_mask_rcnn_R-101-FPN_1x_coco2014.txt
