@@ -74,8 +74,8 @@ def train_model():
                 output_dir, 'model_iter{}.pkl'.format(cur_iter)
             )
             nu.save_model_to_weights_file(checkpoints[cur_iter], model)
-        else:
-            logger.info('new iter {}'.format(cur_iter))
+        #else:
+            #logger.info('new iter {}'.format(cur_iter))
 
         if cur_iter == start_iter + training_stats.LOG_PERIOD:
             # Reset the iteration timer to remove outliers from the first few
