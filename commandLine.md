@@ -6,13 +6,12 @@ CUDA_VISIBLE_DEVICES=0,1 python tools/train_net.py \
 CUDA_VISIBLE_DEVICES=0,1 python tools/train_net.py \
     --multi-gpu-testing \
     --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_1x_coco2014_2017.yaml \
-    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_1x_coco2014_2017.txt
+    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_1x_coco2014valminusmini_coco2017.txt
 
-CUDA_VISIBLE_DEVICES=0,1 python tools/test_net.py 
-	--cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_1x_coco2014_2017.yaml \
+CUDA_VISIBLE_DEVICES=0,1 python tools/test_net.py  --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_1x_coco2014_2017.yaml \
     --multi-gpu-testing  \
-    TEST.WEIGHTS /tmp/detectron-output/train/coco_2014_train:coco_2014_valminusminival:coco_2017_train/generalized_rcnn/model_final.pkl	
-	 NUM_GPUS 2 > test_coco_2017_model_train_MaskRCNN_coco2014_coco2017.txt
+    TEST.WEIGHTS /tmp/detectron-output/train/coco_2014_train:coco_2014_valminusminival:coco_2017_train/generalized_rcnn/model_final.pkl \
+NUM_GPUS 2 > test_coco_2017_model_train_MaskRCNN_coco2017.txt
 	
 CUDA_VISIBLE_DEVICES=0,1 python tools/reval.py \
     --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_1x_coco2014_2017.yaml \

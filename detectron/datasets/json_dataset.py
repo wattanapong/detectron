@@ -44,6 +44,8 @@ from detectron.utils.timer import Timer
 import detectron.datasets.dataset_catalog as dataset_catalog
 import detectron.utils.boxes as box_utils
 
+import time
+
 logger = logging.getLogger(__name__)
 
 
@@ -98,6 +100,12 @@ class JsonDataset(object):
             'are not included.'
         image_ids = self.COCO.getImgIds()
         image_ids.sort()
+        
+        
+        logger.info('num= {} , {} {} {} {} {}'.format(len(image_ids), image_ids[0],image_ids[1],image_ids[2],image_ids[3],image_ids[4]) )
+            
+#        time.sleep(10)
+        
         roidb = copy.deepcopy(self.COCO.loadImgs(image_ids))
         for entry in roidb:
             self._prep_roidb_entry(entry)
