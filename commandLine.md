@@ -16,6 +16,10 @@ CUDA_VISIBLE_DEVICES=0,1 python tools/train_net.py \
 CUDA_VISIBLE_DEVICES=0 python tools/train_net.py \
     --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini_1gpu.yaml \
     OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini.txt
+	
+python tools/train_net.py \
+    --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini_2gpu.yaml \
+    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini.txt
 -----------------------------------------------------------------------
 test
 -----------------------------------------------------------------------
