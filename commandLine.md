@@ -23,7 +23,7 @@ python tools/train_net.py \
 	
 python tools/train_net.py \
     --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_3x_coco2014_train_valminusmini_2gpu.yaml \
-    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini.txt
+    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini_lr0_02.txt
 -----------------------------------------------------------------------
 test
 -----------------------------------------------------------------------
