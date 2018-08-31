@@ -10,8 +10,8 @@ CUDA_VISIBLE_DEVICES=0,1 python tools/train_net.py \
 	
 CUDA_VISIBLE_DEVICES=0,1 python tools/train_net.py \
     --multi-gpu-testing \
-    --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_1x_coco2014_train_valminusmini.yaml \
-    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_1x_coco2014_train_valminusmini.txt
+    --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_1x_coco2014_train_valminusmini_2gpu.yaml \
+    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_1x_coco2014_train_valminusmini_lr0_02.txt
 	
 CUDA_VISIBLE_DEVICES=0 python tools/train_net.py \
     --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini_1gpu.yaml \
@@ -19,11 +19,15 @@ CUDA_VISIBLE_DEVICES=0 python tools/train_net.py \
 	
 python tools/train_net.py \
     --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini_2gpu.yaml \
-    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini.txt
+    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini_lr0_02.txt
 	
 python tools/train_net.py \
     --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_3x_coco2014_train_valminusmini_2gpu.yaml \
-    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_2x_coco2014_train_valminusmini_lr0_02.txt
+    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_3x_coco2014_train_valminusmini_lr0_02.txt
+	
+python tools/train_net.py \
+    --cfg configs/wattanapong/train_e2e_mask_rcnn_R-101-FPN_4x_coco2014_train_valminusmini_2gpu.yaml \
+    OUTPUT_DIR /tmp/detectron-output > train_test_e2e_mask_rcnn_R-101-FPN_4x_coco2014_train_valminusmini_lr0_02.txt
 -----------------------------------------------------------------------
 test
 -----------------------------------------------------------------------
